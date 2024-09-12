@@ -204,7 +204,6 @@ router.post('/update-password', async (req, res, next) => {
 
 router.post('/login', async (req, res, next) => { // login route
     try {
-        console.log('Login request received');
         const { email, password } = req.body; // get email, password from request
         const user = await User.findOne ({ email }); // find user by email
         if (!user) { // if user does not exist
