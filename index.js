@@ -26,7 +26,9 @@ app.use(bodyParser.urlencoded({ limit: '10mb', extended: true })); // For URL-en
 
 
 // CORS Configuration
-const allowedOrigins = [process.env.LOCAL_HOST]; // Frontend URL for local development
+const allowedOrigins = [process.env.LOCAL_HOST, 'http://localhost:3000', // Explicit local development URL
+  'https://porta-byte-frontend.vercel.app', // Deployed frontend URL (replace with actual deployed URL)
+]; // Frontend URL for local development
 app.use(cors({
   origin: function (origin, callback) {
     if (!origin) return callback(null, true); // Allow requests without origin (like Postman)
